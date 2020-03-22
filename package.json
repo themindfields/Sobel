@@ -1,6 +1,6 @@
 {
   "name": "sobel",
-  "version": "0.0.12",
+  "version": "0.0.1",
   "description": "sobel filter",
   "main": "sobel.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "keywords": [
     "sobel"
   ],
-  "author": "Miguel Mota",
+  "author": "Dominik Diling",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/themindfields/Sobel/issues"
