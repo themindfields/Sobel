@@ -1,0 +1,22 @@
+{
+  "name": "sobel",
+  "version": "0.0.12",
+  "description": "sobel filter",
+  "main": "sobel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themindfields/Sobel.git"
+  },
+  "keywords": [
+    "sobel"
+  ],
+  "author": "Miguel Mota",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/themindfields/Sobel/issues"
+  },
+  "homepage": "https://github.com/themindfields/Sobel#readme"
+}
