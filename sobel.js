@@ -8,23 +8,13 @@
 
     var width = imageData.width;
     var height = imageData.height;
-
-    // var kernelX = [
-    //   [-1,0,1],
-    //   [-2,0,2],
-    //   [-1,0,1]
-    // ];
+    
     var kernelX = [
       [-3, 0, 3],
       [-10, 0, 10],
       [-3, 0, 3]
     ];
 
-    // var kernelY = [
-    //   [-1,-2,-1],
-    //   [0,0,0],
-    //   [1,2,1]
-    // ];
     var kernelY = [
       [-3, -10, -3],
       [0, 0, 0],
@@ -42,20 +32,6 @@
     var data = imageData.data;
     var pixelAt = bindPixelAt(data);
     var x, y;
-
-    // for (y = 0; y < height; y++) {
-    //   for (x = 0; x < width; x++) {
-    //     var r = pixelAt(x, y, 0);
-    //     var g = pixelAt(x, y, 1);
-    //     var b = pixelAt(x, y, 2);
-
-    //     var avg = (r + g + b) / 3;
-    //     grayscaleData.push(avg, avg, avg, 255);
-    //     // grayscaleData.push(avg);
-
-    //   }
-    // }
-
     pixelAt = bindPixelAt(data);
 
     for (y = 0; y < height; y++) {
@@ -90,11 +66,7 @@
           else {return Math.round(value);}
         }
         
-        // var magnitude = Math.sqrt((pixelX * pixelX) + (pixelY * pixelY))>>>0;
-    
-        var scaledX = saturate_cast(Math.abs(pixelX));
-        var scaledY = saturate_cast(Math.abs(pixelY));
-        var magnitude = saturate_cast(scaledX * 0.5) + saturate_cast(scaledY * 0.5);
+        var magnitude = saturate_cast(pixelX * 0.5) + saturate_cast(pixelY * 0.5);
         sobelData.push(magnitude);
       }
     }
@@ -111,7 +83,6 @@
 
     var clampedArray = sobelData;
     var max = getMax(clampedArray);
-
 
     if (typeof Uint8ClampedArray === 'function') {
       clampedArray = new Uint8ClampedArray(sobelData);
